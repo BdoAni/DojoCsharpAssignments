@@ -1,0 +1,32 @@
+﻿@* @{
+    ViewData["Title"] = "Home Page";
+} *@
+@using ValidationDojoSurvey.Models
+@model Student
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <form asp-action="Submit" asp-controller="Home"  method="POST">
+    <p>
+        <span asp-validation-for="FullName"></span>
+    <label asp-for="FullName"></label>
+    <input asp-for="FullName">    
+    </p><br>
+    <p>
+        <span asp-validation-for="Location"></span>
+    <label asp-for="Location"></label>
+    <input asp-for="Location">    
+    </p><br>
+    <p>
+        <span asp-validation-for="Language "></span>
+    <label asp-for="Language"></label>
+    <input asp-for="Language">    
+    </p><br>
+    <p>
+    <span asp-validation-for="Comment"></span>
+    <label asp-for="Comment"></label>
+    <input asp-for="Comment">    
+    </p><br>
+        <input value="Add User" type="submit">    
+</form>
+</div>

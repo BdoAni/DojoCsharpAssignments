@@ -1,0 +1,33 @@
+@using ViewModelFun.Models
+@* we are directing our html to the Models folder *@
+@model HomeParagraph
+@* we are saying which model we want to connect to our html and see it*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="~/css/style.css"> 
+</head>
+<body>
+
+    <h1>Here is a Massage!</h1>
+
+    <p>@Model.paragraph</p>
+        @* <form action="/submit" method="POST">
+            <p><lable>Your First Name:</lable>
+            <input type="text" name="FullName"></p><br>
+        <p><lable>Dojo LastName: </lable>
+        <input type="text" name="LastName"></p><br>
+            <button>Submit</button></form> *@
+               @* <form action="/submitToGoBack" method="POST">
+    <p>Your Name:<span color="blue"> @ViewBag.Location</span> </p>
+    <p>Favorite Language:<span> @ViewBag.Languages </span></p>
+    <p>Comment(optional): @ViewBag.Comment </p>
+    <button>GoBack</button>
+    </form> *@
+        </div>
+        </body>
+</html>

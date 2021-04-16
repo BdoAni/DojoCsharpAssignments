@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using Microsoft.AspNetCore.Http;
+@model DojodachiModel;
+@* @Context.Session.GetInt32 *@
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+    <h1>Fullness: @Model.fullness;  Happiness: @Model.happiness;  Meals: @Model.meals;  Energy @Model.energy</h1>
+    <div>
+        @* <h3> You play with your DojoDachi!! @Context.Session.GetInt32("newButton")</h3>   *@
+        <h3> You play with your DojoDachi!! @Context.Session.GetInt32("newButton")</h3>   
+        
+    </div>
+    <div class="flex">
+        <form  asp-controller="Home" asp-action="Feed" metod="POST">
+    <button asp-for="feed">Feed</button> 
+    </form>
+    <form asp-controller="Home" asp-action="Play" metod="POST">
+    <button asp-for="play">Play</button>
+    </form>
+    <form asp-controller="Home" asp-action="Work" metod="POST">
+    <button asp-for="work">Work</button>
+    </form>
+    <form asp-controller="Home" asp-action="Sleep" metod="POST">
+    <button asp-for="sleep">Sleep</button>
+    </form>
+    </div>
+</div>

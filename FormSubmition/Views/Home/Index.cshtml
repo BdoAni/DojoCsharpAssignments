@@ -1,0 +1,37 @@
+﻿@* @{
+    ViewData["Title"] = "Home Page";
+} *@
+@using FormSubmition.Models
+@model User
+
+<div class="text-center">
+<div>
+    <h1>Enter your information</h1>
+<form asp-action="Submit" asp-controller="Home"  method="POST">
+    <p>
+        <span asp-validation-for="FirstName"></span>
+    <label asp-for="FirstName"></label>
+    <input asp-for="FirstName">    
+    </p><br>
+    <p>
+        <span asp-validation-for="LastName"></span>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName">  
+    </p><br>
+    <p>
+        <span asp-validation-for="Age"></span>
+        <label asp-for="Age"></label>
+        <input asp-for="Age"> 
+    </p><br>
+    <p>
+    <span asp-validation-for="Email"></span>
+    <label asp-for="Email"></label>
+    <input asp-for="Email"></p>
+    <p><span asp-validation-for="Password"></span>
+    <label asp-for="Password"></label>
+    <input asp-for="Password"></p>
+    <input value="Add User" type="submit">    
+</form>
+</div>
+</div>
+

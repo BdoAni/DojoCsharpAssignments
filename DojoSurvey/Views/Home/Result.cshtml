@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="~/css/style.css"> 
+</head>
+<body>
+    <h1>Submitted Info  @ViewBag.FullName</h1>
+    @* <p>Name:@{fullName}</p>
+    <p>Dojo Location:@{location}</p>
+    <p>Favorite Language:@{langauage}</p>
+    <p>Comment:@{message}</p> *@
+    <form action="/submitToGoBack" method="POST">
+    <p>Your Name:<span color="blue"> @ViewBag.Location</span> </p>
+    <p>Favorite Language:<span> @ViewBag.Languages </span></p>
+    <p>Comment(optional): @ViewBag.Comment </p>
+    <button>GoBack</button>
+    </form>
+</body>
+</html>
