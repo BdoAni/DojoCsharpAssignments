@@ -13,7 +13,6 @@ namespace LoginRegister
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("checking to see if github is working")
             CreateHostBuilder(args).Build().Run();
         }
 
