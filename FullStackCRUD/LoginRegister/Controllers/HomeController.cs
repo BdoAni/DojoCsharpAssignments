@@ -18,11 +18,41 @@ namespace LoginRegister.Controllers
         {
             db = context;
         }
+        // *************checking if user logged in to mlet type in the url*****\\\\\\\\\\\
+        // **********we are using in the success page******\\\\\\\\\\\\\\\\\\\\\\
+        private int? uid
+        {
+            get
+            {
+                return HttpContext.Session.GetInt32("UserId");
+            }
+        }
+
+        private bool isLoggedIn
+        {
+            get
+            {
+                return uid != null;
+            }
+        }
+
+
         [HttpGet("")]
         public IActionResult Index()
         {
             return View();
         }
+        // ////**********************Success**************************\\\\\\\\\\\\\\\
+        [HttpGet("success")]
+        public IActionResult Success()
+        {
+            if(!isLoggedIn)
+            {
+        return RedirectToAction("Index");
+            }
+            return View("Success");
+        }
+
         // /////////////************************Register****************************\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         [HttpPost("/register")]
         public IActionResult Register(User newUser)
@@ -71,15 +101,11 @@ namespace LoginRegister.Controllers
                     return View("Index");
                 }
                 HttpContext.Session.SetInt32("UserId", dbUsers.UserId);
+                // HttpContext.Session.SetInt32("FirstName", db.firstName.FirstName);
                 return RedirectToAction("Success");
             }
 
-        // ////**********************Success**************************\\\\\\\\\\\\\\\
-        [HttpGet("success")]
-        public IActionResult Success()
-        {
-            return View("Success");
-        }
+
         // ////////////////////////////////************Logout***********\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         [HttpPost("/logout")]
         public IActionResult Logout()
