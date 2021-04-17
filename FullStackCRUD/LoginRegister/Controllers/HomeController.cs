@@ -18,7 +18,7 @@ namespace LoginRegister.Controllers
         {
             db = context;
         }
-        // *************checking if user logged in to mlet type in the url*****\\\\\\\\\\\
+        // *************checking if user logged in to let type in the url*****\\\\\\\\\\\
         // **********we are using in the success page******\\\\\\\\\\\\\\\\\\\\\\
         private int? uid
         {
